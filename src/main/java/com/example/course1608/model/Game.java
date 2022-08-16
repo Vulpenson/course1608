@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -21,13 +23,16 @@ public class Game {
     String roomId;
 
     @NotNull
-    Integer counter = 0;
+    Integer counter;
 
     @NotNull
     String word;
 
     @NotNull
     String hiddenWord;
+
+    @Transient
+    List<String> usedLetters = new ArrayList<>();
 
     @PostLoad
     public void handleNull() {
