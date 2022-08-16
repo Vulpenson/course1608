@@ -20,6 +20,6 @@ public class GameController {
 
     @PostMapping("{roomId}/{guess}")
     public TryResponse guessWord(@PathVariable String roomId, @PathVariable String guess) {
-        
+
     }
 }
